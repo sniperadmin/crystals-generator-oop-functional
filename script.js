@@ -135,6 +135,21 @@ function setup() {
  * @function draw
  */
 function draw() {
+  const filtersWrap = document.querySelector('.filters');
+
+  for (let constructor of layerConstructors) {
+    const filterDiv = createDiv();
+    const label = createP(constructor.name);
+    const select = createSelect();
+
+    for (let i = 0; i < 5; i++) {}
+
+    label.parent(filterDiv);
+    select.parent(filterDiv);
+
+    filterDiv.parent(filtersWrap);
+  }
+
   if (!functional) {
     for (let x = 0; x < COLUMNS; x++) {
       for (let y = 0; y < ROWS; y++) {

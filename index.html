@@ -13,15 +13,19 @@
     <section>
       <h2>Welcome to Crystals generator!</h2>
       <p>written by @Nasr Galal</p>
+
+      <button class="button-1 btn-blue" onclick="redrawCrystals()">
+        click here to redraw different crystals
+      </button>
+  
+      <button class="button-1" onclick="saveSVG()">
+        click here to save shapes into inline SVG format
+      </button>
     </section>
 
-    <button class="button-1 btn-blue" onclick="redrawCrystals()">
-      click here to redraw different crystals
-    </button>
-
-    <button class="button-1" onclick="saveSVG()">
-      click here to save shapes into inline SVG format
-    </button>
+    <section>
+      <div class="filters"></div>
+    </section>
 
     <script src="./utils.js"></script>
     <script src="./classes/layers.js"></script>
