@@ -80,37 +80,6 @@ function getRandomColorFromPalette() {
 }
 
 /**
- * @function testFrame
- * draws a test wireframe of lines and outline circle
- *
- *
- * All methods in this function use p5.js helpers
- * for drawing
- */
-function testFrame() {
-  let numShapes = randomSelectTwo() ? SIDES : SIDES * 2;
-  const strokeColor = getRandomColorFromPalette();
-
-  noFill();
-  stroke(PALETTE[0]);
-  // SECTION: push pop isolates what's in between
-  push();
-  translate(width / 2, height / 2);
-  ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE);
-
-  stroke(strokeColor);
-
-  let angle = 360 / numShapes;
-
-  for (let i = 0; i < numShapes; i++) {
-    line(0, 0, 0, CRYSTAL_SIZE / 2);
-    rotate(angle);
-  }
-  pop();
-  // SECTION
-}
-
-/**
  * @function makeCrystalFunction
  *
  * @param {{x, y}} pos => passed coordinates object
@@ -123,6 +92,7 @@ const makeCrystalFunction = (pos) => {
     let picker = random(1);
 
     const draw = picker > layer.weight;
+    // const draw = layer.name === 'Test frame';
 
     return layer.init({
       pos,
@@ -143,8 +113,7 @@ const drawCrystalFunction = (crystal) => {
   crystal.forEach((layer) => {
     push();
     translate(layer.state.pos.x, layer.state.pos.y);
-    console.log(layer.state.draw);
-    layer.state.draw ? layer.render() : false;
+    !!layer.state.draw ? layer.render() : false;
     pop();
   });
 };
