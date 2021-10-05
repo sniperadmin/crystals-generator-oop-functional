@@ -216,3 +216,41 @@ const steppedHexagons = (state) => {
     }
   })
 }
+
+
+/**
+ * @function testFrame
+ * draws a test wireframe of lines and outline circle
+ *
+ *
+ * All methods in this function use p5.js helpers
+ * for drawing
+ */
+ const testFrame = (state) => {
+  let numShapes = randomSelectTwo() ? SIDES : SIDES * 2;
+  const strokeColor = getRandomColorFromPalette();
+
+  return ({
+    name: 'Test frame',
+    state,
+    render: () => {
+      noFill();
+      stroke(PALETTE[0]);
+      console.log(state.outlineCircle)
+      push();
+      if (state.outlineCircle) {
+        ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE);
+      }
+
+      stroke(strokeColor);
+      if (state.lines) {
+        let angle = 360 / numShapes;
+        for (let i = 0; i < numShapes; i++) {
+          line(0, 0, 0, CRYSTAL_SIZE / 2);
+          rotate(angle);
+        }
+      }
+      pop();
+    }
+  })
+}

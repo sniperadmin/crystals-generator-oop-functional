@@ -72,7 +72,7 @@ const layerConstructors = [
     weight: 0.9,
   },
   {
-    name: 'RingOf Shapes',
+    name: 'Ring Of Shapes',
     init: functional
       ? (props) => ringOfShapes({ ...props, ...setState(state) })
       : () => new RingOfShapes(),
@@ -84,6 +84,16 @@ const layerConstructors = [
       ? (props) => steppedHexagons({ ...props, ...setState(state) })
       : () => new SteppedHexagons(),
     weight: 0.7,
+  },
+  {
+    name: 'Test frame',
+    init: (props) =>
+      testFrame({
+        outlineCircle: false,
+        lines: false,
+        ...props,
+        ...setState(state),
+      }),
   },
 ];
 
