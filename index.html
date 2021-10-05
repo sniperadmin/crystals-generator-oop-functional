@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Free inline SVG art generator" />
+    <meta name="keywords" content="JavaScript, SVG, P5.js, Crystals" />
+    <meta name="author" content="Nasr Galal" />
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="https://unpkg.com/p5.js-svg@1.1.1"></script>
+  </head>
+  <body>
+    <section>
+      <h2>Welcome to Crystals generator!</h2>
+      <p>written by @Nasr Galal</p>
+    </section>
+
+    <button class="button-1 btn-blue" onclick="redrawCrystals()">
+      click here to redraw different crystals
+    </button>
+
+    <button class="button-1" onclick="saveSVG()">
+      click here to save shapes into inline SVG format
+    </button>
+
+    <script src="./utils.js"></script>
+    <script src="./classes/layers.js"></script>
+    <script src="./classes/crystal.js"></script>
+    <script src="./functional-layers.js"></script>
+  </body>
+</html>
